@@ -1,0 +1,863 @@
+/* ============================================================
+   ROMANTIC DATE INVITATION — STYLES
+   ============================================================ */
+
+:root {
+  /* Color palette — soft pink / rose / lavender / cream / white */
+  --pink-50: #fff5f8;
+  --pink-100: #ffe3ee;
+  --pink-200: #ffc9dd;
+  --pink-300: #ffa9c9;
+  --pink-400: #ff7da9;
+  --rose: #ff5e8a;
+  --rose-deep: #e84a76;
+  --lav-100: #efe3ff;
+  --lav-200: #d4b3f0;
+  --lav-300: #b885e0;
+  --cream: #fff8ee;
+  --cream-2: #fff3e6;
+  --white: #ffffff;
+
+  /* Text */
+  --text-dark: #5a3a4d;
+  --text-mid: #7a5566;
+  --text-soft: #9a7585;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(255, 110, 160, 0.18);
+  --shadow-card: 0 20px 60px rgba(180, 90, 140, 0.22), 0 4px 14px rgba(180, 90, 140, 0.12);
+  --shadow-button: 0 8px 22px rgba(232, 74, 118, 0.42);
+
+  /* Radii */
+  --radius-card: 28px;
+  --radius-pill: 999px;
+
+  /* Easing */
+  --ease-romantic: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(135deg, #ffe3ee 0%, #f5e3ff 48%, #fff5e6 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+}
+
+/* ---------- App root ---------- */
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ---------- Aurora background ---------- */
+.background-aurora {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(60vw 60vw at 12% 8%, rgba(255, 173, 200, 0.55), transparent 60%),
+    radial-gradient(55vw 55vw at 88% 22%, rgba(212, 179, 240, 0.5), transparent 60%),
+    radial-gradient(50vw 50vw at 50% 100%, rgba(255, 200, 220, 0.5), transparent 60%);
+}
+
+/* ---------- Screen wrapper (handles transition) ---------- */
+.screen-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  animation: screen-fade 0.55s var(--ease-romantic) both;
+}
+
+@keyframes screen-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------- Screen ---------- */
+.screen {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+    max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+}
+
+/* ---------- Glass card ---------- */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 246, 250, 0.42));
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: var(--radius-card);
+  padding: 36px 28px 30px;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  animation: card-in 0.9s var(--ease-romantic) both;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------- Badge ---------- */
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #ffd6e8, #e9d4ff);
+  color: var(--rose-deep);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(255, 110, 160, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- Main question ---------- */
+.main-question {
+  font-family: 'Dancing Script', 'Poppins', cursive;
+  font-size: clamp(1.9rem, 7vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--rose-deep);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+.heart-emoji {
+  display: inline-block;
+  transform-origin: center;
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  10% { transform: scale(1.18); }
+  20% { transform: scale(0.95); }
+  30% { transform: scale(1.12); }
+  40% { transform: scale(1); }
+}
+
+.sub-question {
+  font-size: clamp(0.95rem, 3.6vw, 1.05rem);
+  color: var(--text-mid);
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+/* ---------- NO message ---------- */
+.no-message {
+  min-height: 1.6em;
+  font-size: clamp(0.95rem, 3.6vw, 1.05rem);
+  color: var(--rose);
+  font-weight: 500;
+  font-style: italic;
+  margin: 0 0 22px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 0 4px;
+}
+
+.no-message.visible {
+  opacity: 1;
+}
+
+.no-message.flash {
+  animation: msg-flash 0.45s var(--ease-romantic);
+}
+
+@keyframes msg-flash {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Buttons ---------- */
+.buttons {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 64px;
+  margin-bottom: 14px;
+}
+
+.btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  transition: transform 0.28s var(--ease-romantic), box-shadow 0.28s var(--ease-romantic),
+    background 0.28s ease, opacity 0.28s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  line-height: 1;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--lav-300);
+  outline-offset: 3px;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* YES button */
+.btn-yes {
+  background: linear-gradient(135deg, #ff8fb1 0%, #ff5e8a 50%, #e84a76 100%);
+  color: white;
+  box-shadow: var(--shadow-button), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  position: relative;
+  overflow: hidden;
+  transform-origin: center;
+  z-index: 1;
+}
+
+.btn-yes:hover {
+  box-shadow: 0 14px 32px rgba(232, 74, 118, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.btn-yes::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-20deg);
+  animation: shine 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% { left: -120%; }
+  55%, 100% { left: 130%; }
+}
+
+/* NO button */
+.btn-no {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-mid);
+  border: 1.5px solid rgba(255, 110, 160, 0.3);
+  box-shadow: 0 4px 14px rgba(180, 90, 140, 0.15);
+  transform-origin: center;
+  z-index: 2;
+}
+
+.btn-no:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 110, 160, 0.5);
+}
+
+/* ---------- Hint (signature) ---------- */
+.hint {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-top: 14px;
+  font-style: italic;
+}
+
+.hint .hint-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.15rem;
+  color: var(--rose);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ---------- Floating hearts ---------- */
+.floating-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: float-up linear infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 110, 160, 0.25));
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.85; }
+  90% { opacity: 0.85; }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- Sparkles ---------- */
+.sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px white, 0 0 14px #ffd6e8;
+  opacity: 0;
+  animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+/* ============================================================
+   YES SCREEN
+   ============================================================ */
+.yes-screen {
+  padding: 24px 16px;
+}
+
+.yes-card {
+  max-width: 620px;
+  padding: 36px 28px 30px;
+}
+
+.yes-title {
+  font-family: 'Dancing Script', 'Poppins', cursive;
+  font-size: clamp(2.2rem, 9vw, 3.4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff5e8a 0%, #c89fe8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+  animation: pop-in 0.85s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.yes-subtitle {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  color: var(--rose);
+  font-weight: 500;
+  margin-bottom: 6px;
+  animation: msg-flash 0.6s var(--ease-romantic) both;
+  animation-delay: 0.2s;
+}
+
+.yes-subtitle-2 {
+  font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+  color: var(--text-mid);
+  margin-bottom: 20px;
+  animation: msg-flash 0.6s var(--ease-romantic) both;
+  animation-delay: 0.35s;
+}
+
+.congrats-line {
+  font-size: clamp(0.9rem, 3.6vw, 0.95rem);
+  color: var(--text-dark);
+  background: rgba(255, 214, 232, 0.45);
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+  border: 1px dashed rgba(232, 74, 118, 0.25);
+  animation: msg-flash 0.6s var(--ease-romantic) both;
+  animation-delay: 0.5s;
+}
+
+.congrats-line strong {
+  color: var(--rose-deep);
+  font-weight: 700;
+}
+
+/* ---------- Date card inner ---------- */
+.date-card-inner {
+  background: linear-gradient(135deg, rgba(255, 245, 232, 0.9), rgba(255, 214, 232, 0.7));
+  border-radius: 20px;
+  padding: 22px 20px;
+  margin-bottom: 22px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 6px 18px rgba(180, 90, 140, 0.1);
+  animation: msg-flash 0.6s var(--ease-romantic) both;
+  animation-delay: 0.65s;
+}
+
+.date-card-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+  color: var(--rose-deep);
+  text-align: center;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.date-card-row {
+  font-size: clamp(0.88rem, 3.4vw, 0.95rem);
+  color: var(--text-dark);
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(232, 74, 118, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.date-card-row:last-child {
+  border-bottom: none;
+}
+
+.date-card-row .row-label {
+  font-weight: 600;
+  color: var(--rose);
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+/* ---------- Plan section ---------- */
+.plan-section {
+  margin-bottom: 22px;
+  animation: msg-flash 0.6s var(--ease-romantic) both;
+  animation-delay: 0.8s;
+}
+
+.plan-title {
+  font-size: clamp(1.1rem, 4.2vw, 1.3rem);
+  color: var(--rose-deep);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.plan-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.plan-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 245, 232, 0.55));
+  border: 1px solid rgba(255, 173, 200, 0.45);
+  border-radius: 16px;
+  padding: 16px 8px 14px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(180, 90, 140, 0.1);
+  animation: card-in 0.5s var(--ease-romantic) both;
+}
+
+.plan-card:nth-child(1) { animation-delay: 0.85s; }
+.plan-card:nth-child(2) { animation-delay: 0.95s; }
+.plan-card:nth-child(3) { animation-delay: 1.05s; }
+
+.plan-icon {
+  font-size: 1.7rem;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.plan-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--rose-deep);
+  margin-bottom: 6px;
+}
+
+.plan-desc {
+  font-size: clamp(0.72rem, 2.9vw, 0.78rem);
+  color: var(--text-mid);
+  line-height: 1.45;
+}
+
+/* ---------- Personal message ---------- */
+.personal-message {
+  background: linear-gradient(135deg, rgba(212, 179, 240, 0.25), rgba(255, 214, 232, 0.4));
+  border-radius: 18px;
+  padding: 20px 20px 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: msg-flash 0.6s var(--ease-romantic) both;
+  animation-delay: 1.15s;
+}
+
+.from-me {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.2rem, 5vw, 1.4rem);
+  color: var(--rose-deep);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.custom-message {
+  font-size: clamp(0.88rem, 3.4vw, 0.95rem);
+  color: var(--text-dark);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.msg-line {
+  display: block;
+}
+
+/* ---------- Restart button ---------- */
+.btn-restart {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--rose);
+  border: 1.5px solid var(--pink-300);
+  font-size: 0.9rem;
+  padding: 12px 22px;
+  margin-top: 4px;
+  box-shadow: 0 4px 12px rgba(180, 90, 140, 0.12);
+  animation: msg-flash 0.6s var(--ease-romantic) both;
+  animation-delay: 1.3s;
+}
+
+.btn-restart:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: var(--pink-400);
+}
+
+/* ---------- Confetti canvas ---------- */
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.floating-hearts.dense .heart {
+  animation-duration: 6s;
+}
+
+/* ============================================================
+   PLEADING POPUP (NO button flow)
+   ============================================================ */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 214, 232, 0.55),
+    rgba(212, 179, 240, 0.45)
+  );
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-y: auto;
+  animation: overlay-fade 0.3s ease both;
+}
+
+@keyframes overlay-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.popup-overlay.closing {
+  animation: overlay-fade-out 0.25s ease both;
+}
+
+@keyframes overlay-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.popup-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 246, 250, 0.72));
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 26px;
+  padding: 38px 28px 30px;
+  box-shadow: 0 24px 60px rgba(180, 90, 140, 0.32), 0 4px 14px rgba(180, 90, 140, 0.16);
+  text-align: center;
+  overflow: hidden;
+  animation: popup-in 0.45s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+}
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.popup-card.closing {
+  animation: popup-out 0.24s ease both;
+}
+
+@keyframes popup-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.86) translateY(8px);
+  }
+}
+
+.popup-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.popup-emoji {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 14px;
+  animation: emoji-bounce 0.6s cubic-bezier(0.22, 1.4, 0.36, 1) both;
+}
+
+@keyframes emoji-bounce {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.popup-message {
+  position: relative;
+  z-index: 1;
+  font-family: 'Dancing Script', 'Poppins', cursive;
+  font-size: clamp(1.3rem, 6vw, 1.7rem);
+  color: var(--rose-deep);
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 24px;
+  padding: 0 6px;
+  animation: msg-flash 0.5s var(--ease-romantic) both;
+  animation-delay: 0.15s;
+}
+
+.btn-popup {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #ff8fb1 0%, #ff5e8a 50%, #e84a76 100%);
+  color: white;
+  box-shadow: 0 8px 22px rgba(232, 74, 118, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  font-size: 0.95rem;
+  padding: 13px 26px;
+  animation: msg-flash 0.5s var(--ease-romantic) both;
+  animation-delay: 0.3s;
+}
+
+.btn-popup:hover {
+  box-shadow: 0 12px 28px rgba(232, 74, 118, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.btn-popup:focus-visible {
+  outline: 3px solid var(--lav-300);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile-first refinements
+   ============================================================ */
+
+/* Small phones (≤ 380px) */
+@media (max-width: 380px) {
+  .card,
+  .yes-card {
+    padding: 28px 18px 24px;
+  }
+  .badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    padding: 7px 14px;
+    margin-bottom: 18px;
+  }
+  .btn {
+    padding: 13px 24px;
+    font-size: 0.95rem;
+  }
+  .popup-card {
+    padding: 30px 20px 22px;
+    max-width: calc(100vw - 32px);
+  }
+  .popup-emoji {
+    font-size: 2.4rem;
+  }
+  .popup-message {
+    font-size: clamp(1.15rem, 7vw, 1.45rem);
+    margin-bottom: 20px;
+  }
+  .plan-cards {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .plan-card {
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+  }
+  .plan-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+  .plan-name {
+    margin-bottom: 2px;
+  }
+  .date-card-row {
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+  }
+  .date-card-row .row-label {
+    min-width: 0;
+  }
+}
+
+/* Tablets (≥ 640px) */
+@media (min-width: 640px) {
+  .card,
+  .yes-card {
+    padding: 44px 38px 36px;
+  }
+}
+
+/* Larger screens (≥ 1024px) */
+@media (min-width: 1024px) {
+  .main-question {
+    letter-spacing: 0.015em;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY — Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .heart,
+  .sparkle,
+  .btn-yes::after,
+  .heart-emoji {
+    animation: none !important;
+  }
+  .heart {
+    display: none;
+  }
+  .sparkle {
+    opacity: 0.5;
+  }
+}
